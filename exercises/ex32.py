@@ -6,6 +6,8 @@ change = [1,'pennies',2,'dimes',3,'quarters']
 for number in the_count:
     print(f"This is count {number}")
 
+#hahaha
+
 #same as above
 for fruit in fruits:
     print(f"A fruit of type : {fruit}")
