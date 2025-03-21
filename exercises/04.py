@@ -40,6 +40,37 @@ print('%.d华氏度 = %.i摄氏度' % (f, c))
 #第二个 % 是格式化操作符，用于将后面的元组中的值插入到格式化字符串中的格式说明符位置。
 
 f,c = 10,20
-print(f'{f:.1f}华氏度 = {c:.1f}摄氏度')
+print(f'{f:.2f}华氏度 = {c:.2f}摄氏度')
 print(f'{f + 10:.1f}华氏度 = {c * 2:.1f}摄氏度')
+
+输入半径计算圆的周长和面积
+
+Version: 1.0
+Author: 骆昊
+
+radius = float(input('请输入圆的半径: '))
+perimeter = 2 * 3.1416 * radius
+area = 3.1416 * radius * radius
+print('周长: %.5f' % perimeter)
+print('面积: %.5f' % area)
+
+import math
+radius = float(input('请输入圆的半径: '))
+perimeter = 2 * math.pi * radius
+area = math.pi * radius ** 2
+print(math.pi)
+print(f'周长: {perimeter:.2f}')
+print(f'面积: {area:.2f}')
+print(f'{perimeter = :.2f}')  # 输出：perimeter = 34.56
+print(f'{area = :.2f}')       # 输出：area = 95.03
+
+
+输入年份，闰年输出True，平年输出False
 """
+year = int(input('请输入年份: '))
+is_leap = year % 4 == 0 and year % 100 != 0 or year % 400 == 0
+if is_leap ==True:
+    print("闰年")
+else :
+    print("平年")
+print(f'{is_leap = }')
