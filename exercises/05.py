@@ -8,20 +8,41 @@ Author: 骆昊
 height = float(input('身高(cm)：'))
 weight = float(input('体重(kg)：'))
 bmi = weight / (height / 100) ** 2
-print(f'{bmi = bmi:d}')
-#print(f'{bmi = :.2f}')
-if 18.5 <= bmi < 24:
+print(f'{bmi = :.2f}')
+if bmi < 18.5:
+    print('你的体重过轻！')
+elif bmi < 24:
     print('你的身材很棒！')
-    print('你的体重正常。')
-print('BMI = {:.2f}'.format(bmi))
-a =12.34
-print(a)
+elif bmi < 27:
+    print('你的体重过重！')
+elif bmi < 30:
+    print('你已轻度肥胖！')
+elif bmi < 35:
+    print('你已中度肥胖！')
+else:
+    print('你已重度肥胖！')
 
-print(f'{a:d}')
-print(f'{a:f}')
-print(f'{a:.2f}')
+status_code = int(input('响应状态码: '))
+match status_code:
+    case 400: description = 'Bad Request'
+    case 401: description = 'Unauthorized'
+    case 403: description = 'Forbidden'
+    case 404: description = 'Not Found'
+    case 405: description = 'Method Not Allowed'
+    case 418: description = 'I am a teapot'
+    case 429: description = 'Too many requests'
+    case _: description = 'Unknown Status Code'
+print('状态码描述:', description)
 """
-num = 10.123
-print(f'{int(num):d}')  
-print(int(num)) 
-print(num) 
+a = float(input('a = '))
+b = float(input('b = '))
+c = float(input('c = '))
+if a + b > c and a + c > b and b + c > a:
+    perimeter = a + b + c
+    print(f'周长: {perimeter}')
+    s = perimeter / 2
+    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5
+    print(f'面积: {area}')
+	
+else:
+    print('不能构成三角形')
